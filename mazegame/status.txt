@@ -1,0 +1,4 @@
+The game compiles and runs as we want.
+
+Mouse inputs and keyboard inputs are working fine.
+Sockets sometimes do not work correctly.
