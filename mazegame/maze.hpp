@@ -7,7 +7,7 @@ using namespace std;
 const int height = 29;
 const int width = 29;
 
-int maze[height][width]={};  //1 for wall, 0 for empty, 2 for egg, 3 for vaccine
+int maze[height][width]={};  //1 for wall, 0 for empty, 2 for coin
 int visit[height][width]={};
 int coins;
 
