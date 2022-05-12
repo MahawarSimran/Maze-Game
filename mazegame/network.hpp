@@ -57,7 +57,7 @@ void change_maze(){
     }
 }
 
-// {x, y, angle, row, col, lives/alive, eggs done?}
+// {x, y, angle, row, col, lives/alive, coins done?}
 void pos_to_buffer(tuple<int, int, int, int, int, int, int> p ){
     string out = to_string(get<0>(p));  // x coordinate
     int n = out.size();
@@ -100,10 +100,10 @@ void pos_to_buffer(tuple<int, int, int, int, int, int, int> p ){
         buffer[i] = out[i-16];
     }
     buffer[20] = get<5>(p)+'0'; // 0 if dead, 1 if alive
-    buffer[21] = get<6>(p)+'0'; // 1 if all the eggs are eaten
+    buffer[21] = get<6>(p)+'0'; // 1 if all the coins are taken
 }
 
-// {x, y, angle, row, col, lives/alive, eggs done?}
+// {x, y, angle, row, col, lives/alive, coins done?}
 tuple <int,int,int,int,int, int, int> buffer_to_pos(){
     int x=0;
     int y=0;
@@ -126,8 +126,8 @@ tuple <int,int,int,int,int, int, int> buffer_to_pos(){
         col += (buffer[i]-'0')*pow(10, 19-i);
     }
     int alive = buffer[20]-'0';
-    int eggs = buffer[21]-'0';
-    return {x,y, angle, row, col, alive, eggs};
+    int coins = buffer[21]-'0';
+    return {x,y, angle, row, col, alive, coins};
 }
 
 void make_server(){
